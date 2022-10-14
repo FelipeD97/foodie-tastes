@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodie Tastes</title>
+    <link rel="stylesheet" href="static/styles.css" />
+  </head>
+  <body>
+    <h1>Foodie Tastes</h1>
+    <form method="POST" action="/recipes">
+      CHOOSE FOOD:
+      <input
+        type="text"
+        name="ingredients"
+        placeholder="flour, sugar, apples"
+        required
+      /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <div class="recipe-list">
+      {% if recipe_list %} {% for recipe in recipe_list: %}
+      <div class="recipe-item">
+        <a
+          href="{{ url_for('get_recipe', recipe_id=recipe.id, recipe_name=recipe.name) }}"
+        >
+          <p class="recipe-name" name="food-title">{{recipe.name}}</p>
+          <img src="{{recipe.image}}" alt="" />
+        </a>
+      </div>
+      {% endfor %} {% endif %}
+    </div>
+  </body>
+</html>

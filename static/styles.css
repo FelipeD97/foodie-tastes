@@ -1,0 +1,38 @@
+
+h1 {
+    text-align: center;
+}
+
+img {
+    border-radius: 20%;
+}
+
+a {
+    cursor: pointer;
+}
+
+form {
+    display: inline;
+}
+
+.recipe-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recipe-item {
+    background-color: #264653;
+    border-radius: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    /* padding: 2rem; */
+}
+
+.recipe-name {
+    color: whitesmoke;
+    text-align: center;
+}
